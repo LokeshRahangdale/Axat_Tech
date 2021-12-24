@@ -1,0 +1,75 @@
+{% extends '../admin/admin_base.html' %}
+
+
+{% block content %}
+<h2 class="text-center">Add Product</h2>
+<div class="col-md-6 offset-md-3">
+    <form method="POST" action="/add_product/" , enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if form.errors %}
+        <div class="alert alert-warning alert-dismissable" role="alert">
+            <button class="close" data-dismiss="alert">
+                <small><sup>x</sup></small>
+            </button>
+            <p>You Got Some Errors</p>
+            {% for field in form %}
+            {% if field.errors %}
+            {{field.errors}}
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="col-md-6 ">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Name</label>
+                <input type="text" class="form-control" name="product_name" placeholder="Enter Product Name"
+                    id="product_name" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Code</label>
+                <input type="text" class="form-control" name="product_code" placeholder="Enter Product Code"
+                    id="product_code" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Price</label>
+                <input type="tel" class="form-control" name="product_price" placeholder="Enter Product Price"
+                    id="product_price" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Category</label>
+                <select name="category" id="category" class="form-control">Product Category
+                    {% for obj in category %}
+                    <option value="{{obj.category}}">{{obj.category}}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Manufacture Date</label>
+                <input type="date" class="form-control" name="manufacture_date" placeholder="Manufacture Date"
+                    id="manufacture_date" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Expiry Date</label>
+                <input type="date" class="form-control" name="expiry_date" placeholder="Expiry Date" id="expiry_date"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Owner</label>
+                <input type="date" class="form-control" name="product_owner" placeholder="Owner name" id="product_owner"
+                    required>
+            </div>
+
+            <div>
+                <center><button type="submit" class="btn btn-secondary">Save</button>
+                </center>
+            </div>
+
+        </div>
+
+
+    </form>
+</div>
+{% endblock content %}

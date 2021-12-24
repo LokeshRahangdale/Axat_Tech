@@ -1,0 +1,70 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-image: url("./img/background.jpg");
+  background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+}
+.header{
+    margin-right: 50px;
+}
+.header p{
+  float: right;
+  margin-top: 12px;
+  margin-right: 5px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.2);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #4CAF50;
+}
+.foot{
+      position: fixed;
+      height: 50px;
+      background-color: rgba(0,0,0,0.2);
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin-bottom: 0px;
+      color: white;
+      text-align: center;
+}
+.signup_container{
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  width: 30%;
+  margin-left: 30%;
+  margin-top: 5%;
+  color: white;
+}
+
+.signup_container input[type:text] {
+  padding: 10px;
+
+}
